@@ -5,7 +5,7 @@ import cloudinary from "cloudinary";
 import express from 'express'
 import path from 'path'
 import { dirname } from "path"; 
-const  __dirname = path.resolve(dirname);
+// const  __dirname = path.resolve(dirname);
 // require('dotenv').config({path:"./config/.env"})
 dotenv.config({path:"./backend/config/.env"});
 // var PORT = 4000;
@@ -24,8 +24,8 @@ cloudinary.v2.config({
 if(process.env.NODE_ENV === "production"){
   app.use(express.static(path.join("frontend/build")))
  app.get('*', function (req, res) {
-  const index = path.join(__dirname, 'build', 'index.html');
-  res.sendFile(__dirname + '/index.html');
+  const index = path.join(dirname, 'build', 'index.html');
+  res.sendFile(dirname + '/index.html');
 });
 }
 // process.env.PWD = process.cwd();
