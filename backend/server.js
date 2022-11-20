@@ -4,8 +4,8 @@ import { connectDatabase } from "./config/database.js";
 import cloudinary from "cloudinary";
 import express from 'express'
 import path from 'path'
-import { __dirname } from "path";
-// var __dirname = path.resolve();
+import { dirname } from "path"; 
+const  __dirname = path.resolve(dirname);
 // require('dotenv').config({path:"./config/.env"})
 dotenv.config({path:"./backend/config/.env"});
 // var PORT = 4000;
