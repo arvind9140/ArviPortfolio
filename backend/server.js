@@ -22,7 +22,7 @@ if(process.env.NODE_ENV === "production"){
   app.use(express.static(path.join("frontend/build")))
   app.get('*', function (req, res) {
     const index = path.join( 'build', 'index.html');
-    res.sendFile(index);
+    res.sendFile('index.html');
   });
 }
 
