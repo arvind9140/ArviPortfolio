@@ -2,8 +2,8 @@ import { app} from "./app.js"
 import dotenv from "dotenv"
 import { connectDatabase } from "./config/database.js";
 import cloudinary from "cloudinary";
-import express from 'express'
-import path from 'path'
+// import express from 'express'
+// import path from 'path'
 
 // require('dotenv').config({path:"./config/.env"})
 dotenv.config({path:"./backend/config/.env"});
@@ -18,13 +18,13 @@ cloudinary.v2.config({
 
 // server production asserts
 
-if(process.env.NODE_ENV === "production"){
-  app.use(express.static(path.join("frontend/build")))
- app.get('*', function (req, res) {
-  const index = path.join(__dirname, 'build', 'index.html');
-  res.sendFile(__dirname + '/index.html');
-});
-}
+// if(process.env.NODE_ENV === "production"){
+//   app.use(express.static(path.join("frontend/build")))
+//  app.get('*', function (req, res) {
+//   const index = path.join(__dirname, 'build', 'index.html');
+//   res.sendFile(__dirname + '/index.html');
+// });
+// }
 
 app.listen(process.env.PORT, ()=>{
   console.log(`Server is running on port: ${process.env.PORT}`)
