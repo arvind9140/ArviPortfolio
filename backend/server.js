@@ -7,7 +7,7 @@ import path from 'path'
 // import { dirname } from "path"; 
 // const  __dirname = path.resolve(dirname);
 // require('dotenv').config({path:"./config/.env"})
-dotenv.config({ path: "path.resolve(path.__dirname, `${process.env.NODE_ENV}.env`),"});
+dotenv.config({ path: path.resolve(path.__dirname, `${process.env.NODE_ENV}.env`),});
 // var PORT = 4000;
 connectDatabase();
 
