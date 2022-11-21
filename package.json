@@ -19,6 +19,10 @@
   },
   "name": "portfolio",
   "version": "1.0.0",
+  "engines": {
+    " npm": "8.19.1",
+    "node": "18.10.0"
+  },
   "main": "backend/server.js",
   "type": "module",
   "scripts": {
@@ -28,10 +32,7 @@
     "heroku-prebuild": "export NPM_CONFIG_PRODUCTION=false; export NODE_ENV=; NPM_CONFIG_PRODUCTION=false NODE_ENV=production npm install --only=dev --dev",
     "heroku-postbuild": "export NPM_CONFIG_PRODUCTION=true; export NODE_ENV=production;"
   },
-  "engines": {
-    " npm": "8.19.1",
-    "node": "18.10.0"
-  },
+ 
   "author": "Arvind",
   "license": "ISC",
   "description": ""
