@@ -18,7 +18,8 @@ cloudinary.v2.config({
 });
 
 process.env.PWD = process.cwd();
-
+app.use(express.json());
+app.use(express.urlencoded({extended: true})); 
 
 if(process.env.NODE_ENV === "production"){
   app.use(express.static(path.join("frontend/build")));
