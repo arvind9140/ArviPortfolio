@@ -21,19 +21,12 @@ process.env.PWD = process.cwd();
 
 
 if(process.env.NODE_ENV === "production"){
-  app.use(express.static(path.join("frontend/build")))
-
+  app.use(express.static(path.join("frontend/build")));
+  app.get('*', function (req, res) {
+    const index = path.join( 'frontend', 'build', 'index.html');
+    res.sendFile('index.html', { path: __dirname });
+  });
 }
-app.get('*', function (req, res) {
-  const index = path.join( 'frontend', 'build', 'index.html');
-  res.sendFile('index.html', { path: __dirname });
-});
-process.env.PWD = process.cwd();
-
-app.use(express.static(process.env.PWD + '/build'));
-
-
-
 
 app.listen(process.env.PORT, ()=>{
   console.log(`Server is running on port: ${process.env.PORT}`)
