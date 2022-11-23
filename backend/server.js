@@ -22,16 +22,16 @@ process.env.PWD = process.cwd();
 
 if(process.env.NODE_ENV === "production"){
   app.use(express.static(path.join("frontend/build")))
-
+app.get('*', function (req, res) {
+  const index = path.join( 'frontend', 'build', 'index.html');
+  res.sendFile('index.html', { path: __dirname });
+});
 }
-
+process.env.PWD = process.cwd();
 
 app.use(express.static(process.env.PWD + '/build'));
 
-app.get('*', function (req, res) {
-  const index = path.join(process.env.PWD, '/frontend/build/index.html');
-  res.sendFile(index);
-});
+
 
 
 app.listen(process.env.PORT, ()=>{
