@@ -6,8 +6,8 @@ import express from 'express'
 import path from 'path'
 import { dirname } from "path"; 
 
-require('dotenv').config({path:"./config/.env"})
-dotenv.config({path:"./backend/config/.env"});
+
+
 
 connectDatabase();
 
