@@ -11,7 +11,6 @@ dotenv.config({path:"./backend/config/.env"});
 // var PORT = 4000;
 connectDatabase();
 
-const app = express();
 
 cloudinary.v2.config({
   cloud_name: 'dfq0ge0zt', 
