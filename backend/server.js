@@ -11,6 +11,8 @@ dotenv.config({path:"./backend/config/.env"});
 // var PORT = 4000;
 connectDatabase();
 
+const app = express();
+
 cloudinary.v2.config({
   cloud_name: 'dfq0ge0zt', 
   api_key: '214435175726284', 
@@ -18,8 +20,6 @@ cloudinary.v2.config({
 });
 
 process.env.PWD = process.cwd();
-app.use(express.json());
-app.use(express.urlencoded({extended: true})); 
 
 if(process.env.NODE_ENV === "production"){
   app.use(express.static(path.join("frontend/build")));
