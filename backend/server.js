@@ -26,8 +26,8 @@ process.env.PWD = process.cwd();
 if(process.env.NODE_ENV === "production"){
   app.use(express.static(path.join("frontend/public")));
   app.get('*', function (req, res) {
-    const index = path.join( 'frontend', 'build', 'index.html');
-    res.sendFile('index.html', { root: path.join(__dirname, '../frontend/public/index.html') });
+    const index = path.join( 'frontend', 'public', 'index.html');
+    res.sendFile('index.html', { root: path.join(__dirname, '../frontend/public') });
   });
 }
 
