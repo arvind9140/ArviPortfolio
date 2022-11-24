@@ -21,16 +21,19 @@ cloudinary.v2.config({
   api_secret: 'PDhOv_RVTqE_G4txGp6W_ubLwzw' 
 });
 
-process.env.PWD = process.cwd();
 
-if(process.env.NODE_ENV === "production"){
-  app.use(express.static(path.join("../frontend/build")));
-  app.get('*', function (req, res) {
-    const index = path.join( __dirname, "frontend", "build");
-    res.sendFile('index.html', { root: path.join(__dirname, '../frontend/build') });
-  });
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../frontend/build')))
+
+  app.get('*', (req, res) =>
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+  )
+} else {
+  app.get('/', (req, res) => {
+    res.send('API is running....')
+  })
 }
-
 app.listen(process.env.PORT, ()=>{
   console.log(`Server is running on port: ${process.env.PORT}`)
 })
