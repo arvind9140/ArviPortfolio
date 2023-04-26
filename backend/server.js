@@ -4,9 +4,9 @@ import { connectDatabase } from "./config/database.js";
 import cloudinary from "cloudinary";
 import express from 'express'
 import path from 'path'
-// import { fileURLToPath } from 'url';
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // const  __dirname = path.resolve(dirname);
 // require('dotenv').config({path:"./config/.env"})
@@ -23,12 +23,12 @@ cloudinary.v2.config({
 
 process.env.PWD = process.cwd();
 
-// if(process.env.NODE_ENV === "production"){
-//   app.use(express.static(path.join("frontend/build")));
-//   app.get('*', function (req, res) {
-//  res.sendFile(path.join(__dirname, '../frontend/build/index.html') );
-//   });
-// }
+if(process.env.NODE_ENV === "production"){
+  app.use(express.static(path.join("frontend/build")));
+  app.get('*', function (req, res) {
+ res.sendFile(path.join(__dirname, '../frontend/build/index.html') );
+  });
+}
 
 app.listen(process.env.PORT, ()=>{
   console.log(`Server is running on port: ${process.env.PORT}`)
