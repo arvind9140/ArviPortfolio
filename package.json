@@ -14,6 +14,7 @@
     "nodemailer": "^6.8.0",
     "nodemon": "^2.0.20",
     "path": "^0.12.7",
+    "react-scripts": "^5.0.1",
     "tls": "^0.0.1",
     "type": "^2.7.2",
     "url": "^0.11.0",
@@ -31,7 +32,6 @@
     "build-assets": "bower install && grunt build",
     "build": "react-scripts build",
     "start": "nodemon backend/server.js"
-   
   },
   "author": "Arvind",
   "license": "ISC",
