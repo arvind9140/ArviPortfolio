@@ -13,8 +13,11 @@ import {
   SiMongodb,
   SiNodedotjs,
   SiExpress,
-  SiCss3,
-  SiHtml5,
+  SiPython,
+  SiDjango,
+  SiFlask,
+  SiPostgresql,
+  SiMysql,
   
 } from "react-icons/si";
 
@@ -184,13 +187,16 @@ const Home = ({ timelines,  skills }) => {
 
         <div className="homeskillsBox" id="homeskillsBox">
           <SiCplusplus />
-          <SiHtml5 />
-          <SiCss3 />
           <SiJavascript />
           <SiMongodb />
           <SiExpress />
           <SiReact />
           <SiNodedotjs />
+          <SiPython/>
+          <SiDjango/>
+          <SiFlask/>
+          <SiPostgresql />
+          <SiMysql />
           
         </div>
       </div>
