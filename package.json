@@ -30,7 +30,7 @@
   "type": "module",
   "scripts": {
     "build-assets": "bower install && grunt build",
-    "build": "npm run build",
+    "build": "react-scripts build",
     "start": "nodemon backend/server.js"
   },
   "author": "Arvind",
