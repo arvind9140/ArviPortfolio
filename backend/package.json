@@ -26,12 +26,12 @@
     " npm": "8.19.1",
     "node": "18.10.0"
   },
-  "main": "backend/server.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "build-assets": "bower install && grunt build",
     "build": "react-scripts build",
-    "start": "nodemon backend/server.js"
+    "start": "nodemon server.js"
   },
   "author": "Arvind",
   "license": "ISC",

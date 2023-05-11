@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 
 // const  __dirname = path.resolve(dirname);
 // require('dotenv').config({path:"./config/.env"})
-dotenv.config({path:"./backend/config/.env"});
+dotenv.config({path:"./config/.env"});
 
 connectDatabase();
 
