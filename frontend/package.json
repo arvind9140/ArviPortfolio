@@ -53,5 +53,5 @@
     "node": "v18.10.0",
     "npm": "8.19.1"
   },
-  "proxy": "http://localhost:4000"
+"proxy": "https://anar.onrender.com"
 }
